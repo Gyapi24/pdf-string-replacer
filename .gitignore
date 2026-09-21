@@ -1,0 +1,6 @@
+node_modules/
+dist/
+dist-web/
+*.pdf
+!sample.pdf
+!web/public/sample.pdf
