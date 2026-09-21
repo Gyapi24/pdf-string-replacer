@@ -1,5 +1,5 @@
-import { writeFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { mkdir, writeFile } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 
 async function main(): Promise<void> {
@@ -41,9 +41,13 @@ async function main(): Promise<void> {
   });
 
   const bytes = await pdf.save();
-  const outputPath = resolve("sample.pdf");
-  await writeFile(outputPath, bytes);
-  console.log(`Wrote ${outputPath}`);
+  const outputs = [resolve("sample.pdf"), resolve("web/public/sample.pdf")];
+
+  for (const outputPath of outputs) {
+    await mkdir(dirname(outputPath), { recursive: true });
+    await writeFile(outputPath, bytes);
+    console.log(`Wrote ${outputPath}`);
+  }
 }
 
 main().catch((error: unknown) => {

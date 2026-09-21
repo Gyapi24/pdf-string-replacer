@@ -212,7 +212,7 @@ dropzone.addEventListener("drop", async (event) => {
 
 sampleButton.addEventListener("click", async () => {
   try {
-    const response = await fetch("/sample.pdf");
+    const response = await fetch(`${import.meta.env.BASE_URL}sample.pdf`);
     if (!response.ok) {
       setStatus("Could not load the sample PDF.");
       return;

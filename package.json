@@ -16,7 +16,7 @@
     "sample": "npm run build && node dist/make-sample.js",
     "replace": "npm run build && node dist/cli.js",
     "dev": "vite",
-    "web:build": "vite build"
+    "web:build": "npm run sample && vite build"
   },
   "engines": {
     "node": ">=18"
