@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF string replace</title>
+    <script type="module" crossorigin src="/pdf-string-replacer/assets/index-fud26j1a.js"></script>
+    <link rel="stylesheet" crossorigin href="/pdf-string-replacer/assets/index-DzHVHYOd.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>PDF string replace</h1>
+        <p>Runs entirely in your browser. Drop one or many PDFs and replace text in all of them.</p>
+      </header>
+
+      <section class="panel">
+        <label class="dropzone" id="dropzone">
+          <input id="file" type="file" accept="application/pdf,.pdf" multiple hidden />
+          <span id="file-label">Drop PDFs here or click to choose one or more</span>
+        </label>
+        <button type="button" id="sample" class="secondary">Load sample</button>
+      </section>
+
+      <section class="panel" id="file-list-panel" hidden>
+        <h2>Files</h2>
+        <ul id="file-list"></ul>
+      </section>
+
+      <section class="panel grid">
+        <label>
+          Find
+          <input id="find" type="text" placeholder="Acme Corp" autocomplete="off" />
+        </label>
+        <label>
+          Replace with
+          <input id="replace" type="text" placeholder="Globex Inc" autocomplete="off" />
+        </label>
+        <label class="check">
+          <input id="ignore-case" type="checkbox" />
+          Ignore case
+        </label>
+        <label>
+          Fallback font (optional TTF/OTF)
+          <input id="font" type="file" accept=".ttf,.otf,font/ttf,font/otf" />
+        </label>
+      </section>
+
+      <section class="actions">
+        <button type="button" id="run" disabled>Replace in all</button>
+        <button type="button" id="download" class="secondary" disabled>Download</button>
+      </section>
+
+      <p id="status" role="status"></p>
+
+      <section class="preview">
+        <div>
+          <h2>Preview <span id="preview-name"></span></h2>
+          <canvas id="canvas"></canvas>
+        </div>
+        <div>
+          <h2>Extracted text</h2>
+          <pre id="text"></pre>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

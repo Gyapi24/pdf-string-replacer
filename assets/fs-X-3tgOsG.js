@@ -1,0 +1,1 @@
+async function e(){throw new Error("File paths are not available in the browser. Pass PDF bytes instead.")}async function r(){throw new Error("File paths are not available in the browser.")}export{e as readFile,r as writeFile};
