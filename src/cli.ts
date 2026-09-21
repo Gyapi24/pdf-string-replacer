@@ -15,7 +15,7 @@ interface CliArgs {
 }
 
 function printHelp(): void {
-  console.log(`Parse a PDF and replace one string with another. test
+  console.log(`Parse a PDF and replace one string with another.
 
 Usage:
   npm start -- --input file.pdf --find "old" --replace "new" --output out.pdf
